@@ -1,7 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* General Body Styles */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
     padding: 0 1rem;
     display: flex;
     justify-content: center;
@@ -14,9 +18,9 @@ body {
 .form-container {
     background: #fff;
     border-radius: 8px;
-    padding: 20px 30px;
+    padding: 2rem 3rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 320px;
+    width: 25rem;
     text-align: center;
 }
 
@@ -80,53 +84,72 @@ button:hover {
 }
 /* Popup Styles */
 .popup {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    padding: 2rem;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    justify-content: center;
-    align-items: center;
     z-index: 1000;
 }
-
-.popup-container {
-    padding: 20px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
+.message {
+    width: 20rem;
+    min-height: max-content;
+    position: absolute;
+    right: 2rem;
+    transform: translateX(30rem);
+    font-size: 1.5em;
+    color: white;
+}
+.messageContainer {
     position: relative;
-    animation: fadeIn 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 2rem;
+    background: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
 }
 
-.popup-container p {
-    margin: 0;
-    font-size: 1.1em;
-    color: white;
+.progress {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 0, 0.665);
+    height: .5rem;
+}
+
+.progress-fill {
+    background: yellow;
+    height: 100%;
 }
 
 /* Close Button */
-.close-btn {
+.closeBtn {
     position: absolute;
-    top: 10px;
-    right: 15px;
+    top: 0;
+    right: 10px;
     font-size: 1.5em;
     cursor: pointer;
     color: white;
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
+@keyframes swap {
+    5% {
+        transform: translateX(0);
+    }
+    95% {
+        transform: translateX(0);
+    }
+}
+@keyframes increment {
     from {
-        opacity: 0;
-        transform: translateY(-10px);
+        width: 100%;
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        width: 0;
     }
 }
