@@ -98,7 +98,8 @@ button:hover {
     width: 20rem;
     min-height: max-content;
     transform: translateX(30rem);
-    animation: swap 5s ease-in-out;
+    transition: transform .15s ease-in-out;
+    /* animation: swap 5s ease-in-out; */
     font-size: 1.5em;
     color: white;
 }
@@ -125,7 +126,7 @@ button:hover {
 .progress-fill {
     background: yellow;
     height: 100%;
-    animation: increment 4.5s linear;
+    /* animation: increment 4.5s linear; */
 }
 
 /* Close Button */
